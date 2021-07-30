@@ -128,6 +128,9 @@ body{
             border: 2px solid #fff;
             border-radius: 0 0 30px 30px;
             cursor: pointer;
+            @include sm{
+                max-height: 400px;
+            }
             &:hover{
                 transform: scale(1.1);
                 background: #a5a5a5;
