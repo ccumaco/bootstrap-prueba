@@ -1,0 +1,233 @@
+*{
+margin: 0;
+padding: 0;
+}
+@mixin sm {
+    @media screen and (max-width:970px) {
+        @content
+    }
+};
+$font-primary: 'Roboto';
+
+@font-face {
+    font-family: $font-primary;
+    src: url(./font/Roboto-Regular.ttf);
+}
+body::-webkit-scrollbar {
+    width: 25px;
+    background: #fff;
+}
+body::-webkit-scrollbar-thumb {
+    background: #524365;
+    border-radius: 30px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    nav.navbar{
+        width: 100%;
+        text-align: center;
+        background-color: #000 !important;
+        box-shadow: 4px 4px 4px #fff;
+        @include sm{
+            margin: 0;
+            padding: 0;
+        }
+        ul.navbar-nav{
+            margin: 0 auto;
+            width: 100%;
+            @include sm{
+                margin-bottom: 0 !important;
+                padding: 0;
+            }
+            li{
+                width: 100%;
+                a.nav-link{
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    &:hover{
+                        color: #fff;
+                    }
+                }
+                .dropdown-menu{
+                    width: 100%;
+                    max-height: 50vh;
+                    overflow-y: scroll;
+                    text-align: center;
+                    border-radius: 0 0 50px 50px;
+                    box-shadow: 4px 4px 4px;
+                    &::-webkit-scrollbar{
+                        display: none;
+                    }
+                    @include sm{
+                        border-radius: 0;
+                        box-shadow: none;
+                        max-height: 100vh;
+                    }
+                    li{
+                        font-family: $font-primary;
+                        a{
+
+                            padding: 0.7rem 0;
+                        }
+                        .dropdown-divider{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+body{
+    #body-loader{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3498db;
+        z-index: 1;
+        top: 0;
+        .title-loading{
+            font-family: $font-primary;
+            margin-right: 2rem;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 3rem;
+        }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+          }
+    }
+      
+
+    .container-cards{
+        padding: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        min-height: 100vh;
+        justify-content: space-around;
+        background: linear-gradient(217deg,#4fa2d2 , rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, #4873a6, rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, #524365, rgba(0,0,255,0) 70.71%);
+        > .card{
+            margin: 1rem 0;
+            box-shadow: 0px 10px 10px -6px black;
+            transition: all 1s ease;
+            border: 2px solid #fff;
+            border-radius: 0 0 30px 30px;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+                background: #a5a5a5;
+                border: 2px solid #000;
+                .card-body .card-title{
+                    color: #fff;
+                }
+                #container-currencies{
+
+                    .name-currenci,.symbol-currenci,.code-currency{
+                        color: #fff;
+                    }
+                }
+                .whatch-more{
+                    button{
+                        background: #000 !important;
+                    }
+                }
+            } 
+            .container-image{
+                display: flex;
+                height: 190px;
+                justify-content: center;
+                align-items: center;
+                background: #000;
+                .card-img-top{
+                    height: 100%;
+                }
+            }
+            .container-image.max-image{
+                height: auto;
+            }
+            .card-body{
+                text-align: left;
+                #container-currencies{
+                    ul{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .name-currenci,.symbol-currenci,.code-currency{
+                        font-family: $font-primary;
+                        list-style: none;
+                        transition: all 2s ease;
+                    }
+                }
+                .card-title{
+                    transition: all 2s ease;
+                    font-family: $font-primary;
+                }
+                .whatch-more{
+                    button{
+                        transition: all 2s ease;
+                        width: 100%;
+                        padding: 0.8rem 0;
+                        border-radius: 15px;
+                        margin-top: 2rem;
+                        background: #524365;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-size: 1rem;
+                        outline: none;
+                        font-family: $font-primary;
+                    }
+                }
+                &.center{
+                    text-align: center;
+                }
+            }
+            .random{
+                height: 100%;
+                width: 100%;
+                outline: none;
+                background: #fff;
+                color: #4fa2d2;
+                font-size: 2rem;
+                padding: 25% 0;
+                text-align: center;
+                border: 0;
+                border-radius: 0 0 30px 30px;
+            }
+        }
+        .come-back{
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background: darkgoldenrod;
+            outline: none;
+            color: #fff;
+            border-radius: 30px;
+            padding: 0.4rem 7rem;
+        }
+    }
+}
+/* Safari */
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
