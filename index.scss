@@ -128,9 +128,7 @@ body{
             border: 2px solid #fff;
             border-radius: 0 0 30px 30px;
             cursor: pointer;
-            @include sm{
-                max-height: 400px;
-            }
+            height: fit-content;
             &:hover{
                 transform: scale(1.1);
                 background: #a5a5a5;
@@ -158,6 +156,9 @@ body{
                 background: #000;
                 .card-img-top{
                     height: 100%;
+                    // @include sm{
+                        max-height: 600px;
+                    // }
                 }
             }
             .container-image.max-image{

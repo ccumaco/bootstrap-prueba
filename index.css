@@ -163,12 +163,9 @@ body .container-cards > .card {
   border: 2px solid #fff;
   border-radius: 0 0 30px 30px;
   cursor: pointer;
-}
-
-@media screen and (max-width: 970px) {
-  body .container-cards > .card {
-    max-height: 400px;
-  }
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 body .container-cards > .card:hover {
@@ -206,6 +203,7 @@ body .container-cards > .card .container-image {
 
 body .container-cards > .card .container-image .card-img-top {
   height: 100%;
+  max-height: 600px;
 }
 
 body .container-cards > .card .container-image.max-image {
