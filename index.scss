@@ -129,6 +129,9 @@ body{
             border-radius: 0 0 30px 30px;
             cursor: pointer;
             height: fit-content;
+            &.not-fit{
+                height: auto;
+            }
             &:hover{
                 transform: scale(1.1);
                 background: #a5a5a5;
@@ -200,6 +203,7 @@ body{
                     text-align: center;
                 }
             }
+
             .random{
                 height: 100%;
                 width: 100%;

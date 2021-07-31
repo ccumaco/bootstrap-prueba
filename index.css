@@ -168,6 +168,10 @@ body .container-cards > .card {
   height: fit-content;
 }
 
+body .container-cards > .card.not-fit {
+  height: auto;
+}
+
 body .container-cards > .card:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);

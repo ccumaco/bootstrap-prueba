@@ -4,7 +4,7 @@ let containerList = document.getElementById('container-list')
 function loadCountriesApi() {
     containerCards.innerHTML = ` `
     containerCards.innerHTML += `
-    <div class="card" style="width: 18rem;" onClick="randomOrdenate()">
+    <div class="card not-fit" style="width: 18rem;" onClick="randomOrdenate()">
         <button class="random">Organizar Aleatoriamente</button>
     </div>
     `
@@ -114,7 +114,7 @@ function randomOrdenate() {
         arr.sort(() => Math.random() > 0.5 ? 1 : -1)
     }
     containerCards.innerHTML += `
-        <div class="card" style="width: 18rem;" onClick="randomOrdenate()">
+        <div class="card not-fit" style="width: 18rem;" onClick="randomOrdenate()">
             <button class="random">Organizar Aleatoriamente</button>
         </div>
     `
